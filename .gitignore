@@ -1,0 +1,12 @@
+build/
+.build
+
+install/
+.install
+
+log/
+.log
+
+__pycahce__/
+*.pyc
+*.pyo
