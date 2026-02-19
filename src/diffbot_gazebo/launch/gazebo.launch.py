@@ -16,6 +16,15 @@ def generate_launch_description():
     A function to generate launch description
     """
 
+    # Made teleop node a variable
+    teleop_node = Node(
+        name='teleop_twist_keyboard_node',
+        package='teleop_twist_keyboard',
+        executable='teleop_twist_keyboard',
+        output='screen',
+        prefix='xterm -e',
+    )
+
     return LaunchDescription([
 
         # 1. Launch gazebo simulator
@@ -45,12 +54,6 @@ def generate_launch_description():
         ),
 
         # 4. Run the teleop_twist_keyboard node to control robot manually
-        Node(
-            name='teleop_twist_keyboard_node',
-            package='teleop_twist_keyboard',
-            executable='teleop_twist_keyboard',
-            output='screen',
-            prefix='xterm -e',
-        )
+        # teleop_node,
 
     ])
